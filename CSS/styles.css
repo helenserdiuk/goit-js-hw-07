@@ -1,0 +1,30 @@
+img {
+  width: 252px;
+  height: 150px;
+}
+
+#gallery {
+  padding: 10px;
+  background-color: violet;
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#name-input {
+  margin-top: 50px;
+}
+
+#validation-input {
+  display: flex;
+  margin-bottom: 50px;
+  border: 3px solid #bdbdbd;
+}
+
+#validation-input.valid {
+  border-color: #4caf50;
+}
+
+#validation-input.invalid {
+  border-color: #f44336;
+}
