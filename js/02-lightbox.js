@@ -16,13 +16,7 @@ function createGalleryCard(array) {
 
 createGalleryCard(galleryItems);
 
-gallery.addEventListener("click", openModal);
-
 const lightbox = new SimpleLightbox(".gallery a", {
   captionsData: "alt",
   captionDelay: 250,
 });
-
-function openModal(event) {
-  event.preventDefault();
-}
