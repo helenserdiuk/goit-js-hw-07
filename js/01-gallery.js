@@ -35,20 +35,24 @@ function openModal(event) {
   }
   const datasetSourceImg = event.target.dataset.source;
 
-  const instance = basicLightbox.create(`
-    <img src="${datasetSourceImg}" width="800" height="600">`);
+  const instance = basicLightbox.create(
+    `
+    <img src="${datasetSourceImg}" width="800" height="600">`,
+    {
+      onShow: () => {
+        window.addEventListener("keydown", closeEsc);
+      },
+      onClose: () => {
+        window.removeEventListener("keydown", closeEsc);
+      },
+    }
+  );
 
   instance.show();
 
-  window.addEventListener("keydown", (event) => {
+  function closeEsc(event) {
     if (event.code === "Escape") {
       instance.close();
     }
-  });
-}
-
-window.removeEventListener("keydown", (event) => {
-  if (event.code === "Escape") {
-    instance.close();
   }
-});
+}
